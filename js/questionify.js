@@ -32,6 +32,9 @@
 	}
 
 	$( document ).ready(function() {
+		questionify.flowify(questiondata);
+
+		/*
 		$.each(questiondata, function(q, data) {
 
 			var htmlstring = "";
@@ -50,9 +53,12 @@
 		});
 
 		$("#container").find("#q1").show(200);
+		*/
 
 		$(document.body).on('click', '.questionAnswer' ,function(){
 
+			questionify.questionClick($(this));
+/*
 			var next = $(this).data('next');
 			var current = $(this).data('id');
 			
@@ -71,6 +77,7 @@
 			});
 
 			$('#' + $(this).data('next')).show(200);
+			*/
 		});
 
 		//debug
