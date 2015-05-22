@@ -12,7 +12,7 @@ var questionify = {
 		}
 	},
 	showQuestionHtml : function() {
-		$.each(this.questiondata, function(q, data) {
+		$.each(questionify.questiondata, function(q, data) {
 
 			var htmlstring = "";
 
@@ -63,7 +63,7 @@ var questionify = {
 		if(questionify.hideafter == true) {
 			$('#' + current).hide(200);
 		}
-		
+
 		$('#' + next).show(200);
 
 
@@ -80,12 +80,12 @@ var questionify = {
 		questionify.hideafter = hideafter || questionify.hideafter;
 		questionify.setContainer(container || questionify.container);
 		questionify.setQuestionData(q);
-		this.showQuestionHtml();
+		questionify.showQuestionHtml();
 	},
 	getQuestions : function() {
-		return this.questiondata;
+		return questionify.questiondata;
 	},
 	getQuestionAnswers : function(qid) {
-		return $this.questiondata.qid;
+		return questionify.questiondata.qid;
 	}
 }
