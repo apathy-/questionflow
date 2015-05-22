@@ -32,61 +32,13 @@
 	}
 
 	$( document ).ready(function() {
-		questionify.flowify(questiondata);
-
-		/*
-		$.each(questiondata, function(q, data) {
-
-			var htmlstring = "";
-
-			//question header
-			htmlstring = htmlstring + '<div question" style="display: none;" id="' + q + '"><span class="question">' + data.question + '</span><ul>';
-				
-				//question options/answers
-				$.each(data.options, function(i, a) {
-					htmlstring = htmlstring + '<li class="questionAnswer" data-id="' + q + '" data-answer="' + i + '" data-next="' + a + '">' + i + '</li>';
-				});
-
-			//finish the HTML
-			htmlstring = htmlstring + '</ul></div>'
-			$('#container').append(htmlstring);
-		});
-
-		$("#container").find("#q1").show(200);
-		*/
+		questionify.flowify(questiondata, 'container', true, true);
 
 		$(document.body).on('click', '.questionAnswer' ,function(){
 
 			questionify.questionClick($(this));
-/*
-			var next = $(this).data('next');
-			var current = $(this).data('id');
-			
 
-			$.each(questiondata, function(q, data) {
-				var qid = q.substr(1);
-				var qnext = next.substr(1);
-				var qcurrent = current.substr(1);
- 
-				if(parseInt(qid) > parseInt(qcurrent)) {
-
-					$("#container").find("#q" + qid).hide(200);
-
-				}
-
-			});
-
-			$('#' + $(this).data('next')).show(200);
-			*/
 		});
 
-		//debug
-		/*
-		$.each(questiondata, function(k, data) {
-			console.log(k + ":" + data.question);
-			$.each(data.options, function(i, a) {
-				console.log(i + ":" + a);
-			});
-		});
-		*/
+
 	});
