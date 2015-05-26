@@ -1,5 +1,5 @@
 var questionify = {
-	questionadata : {},
+	questiondata : {},
 	debug : false,
 	debugData : [],
 	container : 'container',
